@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainPageView: View {
     @State private var searchValue: String = ""
+    
+
 
     
     var body: some View {
@@ -16,7 +18,7 @@ struct MainPageView: View {
         .foregroundStyle(Color(hex: "F3F3F3"))
         .overlay(content: {
             ScrollView(.vertical, showsIndicators: false) {
-                VStack{
+                VStack(alignment: .leading){
                     HStack {
                                 Image(systemName: "magnifyingglass")
                                     .foregroundColor(.gray)
@@ -32,12 +34,17 @@ struct MainPageView: View {
                             .padding(.horizontal,15)
                             .padding(.bottom,15)
                     
-                    Rectangle()
-                        .frame(width: .infinity,height: 260)
-                        .foregroundStyle(Color.white)
-                        .overlay {
-                            
-                        }
+                    MainCategoryView()
+                    Spacer().frame(height: 21)
+                    Text("Рекомендованое вам")
+                        .font(.system(size: 18))
+                        .fontWeight(.bold)
+                        .padding(.horizontal, 15)
+                
+                    Spacer().frame(height: 16)
+                    MainGridView()
+
+                   
                         
                 }
             }

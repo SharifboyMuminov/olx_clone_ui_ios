@@ -9,7 +9,60 @@ import SwiftUI
 
 struct MainCategoryView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Rectangle()
+            .frame(width: .infinity,height: 220)
+            .foregroundStyle(Color.white)
+            .overlay {
+                VStack(alignment: .trailing){
+                    Spacer().frame(height: 16)
+                    HStack{
+                        Text("Категории")
+                            .font(.system(size: 16))
+                            .fontWeight(Font.Weight.regular)
+                        Spacer()
+                        Button {
+                            
+                        } label: {
+                            Text("Смотреть все").font(.system(size: 12))
+                                .fontWeight(Font.Weight.light)
+                                .foregroundStyle(Color(hex: "747474"))
+                        }
+
+                    }.padding(.horizontal)
+                    Spacer().frame(height: 11)
+                    Rectangle()
+                        .frame(width: .infinity,height: 1)
+                        .foregroundStyle(Color(hex: "F3F3F3"))
+                        .padding(.horizontal,16)
+                    Spacer().frame(height: 22)
+                    
+                    ScrollView(.horizontal,showsIndicators: false) {
+                        HStack{
+                            ForEach(0..<10) { i in
+                                VStack(alignment: .center){
+                                    Circle()
+                                          .frame(width: 81,height: 81)
+                                          .foregroundStyle(Color(hex: "FFD700"))
+                                          .overlay {
+                                              Image("image")
+                                                  .resizable()
+                                                  .frame(width: 70, height: 70)
+                                          }
+                                    Spacer().frame(height: 13)
+                                    Text("Все обявления")
+                                        .font(.system(size: 10))
+                                        .fontWeight(Font.Weight.regular)
+                                        .multilineTextAlignment(.center)
+                                        .frame(width: 60)
+                                }.padding(.leading,15)
+                            }
+                        }
+                    }
+                    
+                    Spacer()
+                }
+            }
+            
     }
 }
 
