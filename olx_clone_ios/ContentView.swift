@@ -9,40 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        MainPageView()
-//        VStack{
-//            ZStack {
-//                HStack {
-//                    Button {
-//                        print("hi")
-//                    } label: {
-//                        Text("Отмена")
-//                            .font(.system(size: 14))
-//                            .fontWeight(.regular)
-//                            .foregroundColor(Color(hex: "747474"))
-//                    }
-//                    Spacer()
-//                }
-//
-//                Text("Категории")
-//                    .font(.system(size: 18))
-//                    .fontWeight(.semibold)
-//            }.padding(.horizontal)
-//                .padding(.bottom)
-//            ScrollView{
-//                VStack (spacing: 10){
-//                    ForEach(0..<20, id: \.self) { index in
-//                                MainItem()
-//                            }
-//                }
-//            }
-//            
-//
-//            
-//        }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-
-            
+        NavigationStack{
+            MainPageView()
+        }
     }
 }
 

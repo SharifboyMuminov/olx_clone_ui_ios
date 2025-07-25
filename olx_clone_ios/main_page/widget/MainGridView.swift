@@ -18,7 +18,6 @@ struct MainGridView: View {
                            ForEach(0..<10) { index in
                                RoundedRectangle(cornerRadius: 10)
                                    .frame(height: 207)
-                               
                                    .foregroundStyle(Color.white)
                                    .overlay {
                                        VStack(alignment: .leading){

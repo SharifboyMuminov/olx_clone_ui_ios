@@ -20,18 +20,20 @@ struct MainCategoryView: View {
                             .font(.system(size: 16))
                             .fontWeight(Font.Weight.regular)
                         Spacer()
-                        Button {
-                            
+                        NavigationLink {
+                            CategoryView()
                         } label: {
-                            Text("Смотреть все").font(.system(size: 12))
-                                .fontWeight(Font.Weight.light)
+                            Text("Смотреть все")
+                                .font(.system(size: 12))
+                                .fontWeight(.light)
                                 .foregroundStyle(Color(hex: "747474"))
                         }
 
                     }.padding(.horizontal)
                     Spacer().frame(height: 11)
                     Rectangle()
-                        .frame(width: .infinity,height: 1)
+                        .frame(height: 1)
+
                         .foregroundStyle(Color(hex: "F3F3F3"))
                         .padding(.horizontal,16)
                     Spacer().frame(height: 22)

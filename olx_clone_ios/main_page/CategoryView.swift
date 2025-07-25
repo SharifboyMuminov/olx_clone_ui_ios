@@ -8,8 +8,43 @@
 import SwiftUI
 
 struct CategoryView: View {
+    
+    @Environment(\.dismiss) var dismiss
+
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                VStack{
+                    ZStack {
+                        HStack {
+                            Button {
+                                dismiss()
+                            } label: {
+                                Text("Отмена")
+                                    .font(.system(size: 14))
+                                    .fontWeight(.regular)
+                                    .foregroundColor(Color(hex: "747474"))
+                            }
+                            Spacer()
+                        }
+        
+                        Text("Категории")
+                            .font(.system(size: 18))
+                            .fontWeight(.semibold)
+                    }.padding(.horizontal)
+                        .padding(.bottom)
+                    ScrollView{
+                        VStack (spacing: 10){
+                            ForEach(0..<20, id: \.self) { index in
+                                CategoryItam()
+                                    }
+                        }
+                    }
+        
+        
+        
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .navigationBarBackButtonHidden(true) 
     }
 }
 
